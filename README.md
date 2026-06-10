@@ -1,0 +1,1 @@
+# shofuku-event-group
