@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+.dark {
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  background: #f7f1e6;
+  color: #161514;
+  font-family: var(--font-body), sans-serif;
+}
+
+.dark body {
+  background: #070706;
+  color: #f8f4eb;
+}
+
+::selection {
+  background: rgba(220, 197, 143, 0.55);
+  color: #161514;
+}
+
+@layer components {
+  .section-shell {
+    @apply mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-10;
+  }
+
+  .eyebrow {
+    @apply text-xs font-bold uppercase tracking-[0.3em] text-bronze dark:text-champagne;
+  }
+
+  .display-heading {
+    @apply font-display text-5xl font-semibold leading-[0.9] tracking-normal text-ink dark:text-ivory md:text-7xl lg:text-8xl;
+  }
+
+  .section-heading {
+    @apply font-display text-4xl font-semibold leading-tight tracking-normal text-ink dark:text-ivory md:text-6xl;
+  }
+
+  .section-kicker {
+    @apply max-w-2xl text-base leading-8 text-ink/65 dark:text-ivory/65 md:text-lg;
+  }
+
+  .primary-cta {
+    @apply inline-flex min-h-12 items-center justify-center rounded-full bg-ink px-7 text-xs font-extrabold uppercase tracking-[0.2em] text-ivory shadow-sm transition duration-300 hover:-translate-y-0.5 hover:bg-emerald hover:shadow-luxury dark:bg-champagne dark:text-ink dark:hover:bg-ivory;
+  }
+
+  .secondary-cta {
+    @apply inline-flex min-h-12 items-center justify-center rounded-full border border-ink/20 bg-white/35 px-7 text-xs font-extrabold uppercase tracking-[0.2em] text-ink transition duration-300 hover:-translate-y-0.5 hover:border-bronze hover:text-bronze dark:border-ivory/20 dark:bg-white/5 dark:text-ivory dark:hover:border-champagne dark:hover:text-champagne;
+  }
+
+  .fine-border {
+    @apply border border-ink/10 dark:border-ivory/10;
+  }
+}
