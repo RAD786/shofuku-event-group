@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { ThemeToggle } from "@/components/ThemeToggle";
+import { ThemeLampToggle } from "@/components/ThemeLampToggle";
 
 const navItems = [
   { href: "#about", label: "About" },
@@ -44,7 +44,7 @@ export function Navbar() {
           ))}
         </div>
 
-        <ThemeToggle />
+        <ThemeLampToggle />
       </nav>
     </header>
   );

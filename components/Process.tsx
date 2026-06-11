@@ -27,7 +27,10 @@ const pillars = [
 
 export function Process() {
   return (
-    <section className="relative bg-[linear-gradient(135deg,#11100e,#161514_52%,#153f35)] py-28 text-ivory dark:bg-[linear-gradient(135deg,#050504,#11100e_45%,#102c26)] md:py-36">
+    <section className="relative isolate overflow-hidden bg-ink py-28 text-ivory md:py-36">
+      <div className="absolute inset-0 -z-20 bg-[url('/images/background-section-4.png')] bg-cover bg-center" />
+      <div className="absolute inset-0 -z-10 bg-ink/78 dark:bg-black/82" />
+      <div className="absolute inset-0 -z-10 bg-[linear-gradient(135deg,rgba(17,16,14,0.58),rgba(22,21,20,0.66)_52%,rgba(21,63,53,0.54))] dark:bg-[linear-gradient(135deg,rgba(5,5,4,0.72),rgba(17,16,14,0.72)_45%,rgba(16,44,38,0.6))]" />
       <div className="absolute inset-0 opacity-30">
         <div className="absolute left-10 top-24 h-px w-80 rotate-12 bg-gradient-to-r from-transparent via-champagne to-transparent" />
         <div className="absolute bottom-20 right-10 h-64 w-64 rounded-full border border-champagne/20" />

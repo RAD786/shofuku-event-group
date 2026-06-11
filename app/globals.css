@@ -66,6 +66,76 @@ body {
 }
 
 @layer utilities {
+  .lamp-toggle {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .lamp-toggle-glow {
+    opacity: 0;
+    filter: blur(12px);
+    transform: translate(-50%, 5px) scale(0.78);
+    transition:
+      opacity 500ms ease,
+      transform 500ms ease,
+      filter 500ms ease;
+  }
+
+  .lamp-toggle:hover .lamp-toggle-glow {
+    opacity: 0.22;
+    transform: translate(-50%, 6px) scale(0.9);
+  }
+
+  .dark .lamp-toggle-glow {
+    opacity: 1;
+    transform: translate(-50%, 7px) scale(1);
+  }
+
+  .dark .lamp-toggle:hover .lamp-toggle-glow {
+    opacity: 1;
+    filter: blur(14px);
+    transform: translate(-50%, 8px) scale(1.08);
+  }
+
+  .lamp-toggle-img {
+    transition:
+      opacity 360ms ease,
+      transform 420ms ease,
+      filter 500ms ease;
+  }
+
+  .lamp-toggle-img-unlit {
+    opacity: 1;
+    filter: drop-shadow(0 5px 10px rgba(22, 21, 20, 0.16));
+  }
+
+  .lamp-toggle-img-lit {
+    opacity: 0;
+    filter: drop-shadow(0 6px 12px rgba(22, 21, 20, 0.12));
+  }
+
+  .lamp-toggle:hover .lamp-toggle-img {
+    transform: translateY(-1px) scale(1.03);
+  }
+
+  .dark .lamp-toggle-img-unlit {
+    opacity: 0;
+  }
+
+  .dark .lamp-toggle-img-lit {
+    opacity: 1;
+    filter:
+      drop-shadow(0 0 14px rgba(245, 190, 90, 0.65))
+      drop-shadow(0 0 28px rgba(245, 190, 90, 0.34));
+  }
+
+  .lamp-toggle-cord {
+    transform-origin: top center;
+  }
+
+  .lamp-toggle:hover .lamp-toggle-cord {
+    transform: translateX(-50%) scaleY(1.16);
+  }
+
   .hero-bg {
     animation: hero-bg-arrival 2s cubic-bezier(0.2, 0.8, 0.2, 1) both;
     transform-origin: 62% 42%;
