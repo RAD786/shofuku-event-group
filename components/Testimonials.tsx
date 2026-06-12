@@ -33,10 +33,6 @@ export function Testimonials() {
               The kind of polish people remember.
             </h2>
           </div>
-          <p className="section-kicker">
-            Early client language is intentionally understated: less spectacle,
-            more confidence, care, and control.
-          </p>
         </div>
 
         <div className="mt-16 grid gap-5 lg:grid-cols-3">

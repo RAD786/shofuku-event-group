@@ -45,11 +45,6 @@ export function Gallery() {
               Rooms with atmosphere. Moments with intent.
             </h2>
           </div>
-          <p className="section-kicker max-w-sm">
-            Editorial studies for rooms that range from private dinners and
-            executive receptions to brand launches, benefits, and cultural
-            experiences.
-          </p>
         </div>
 
         <div className="mt-16 grid auto-rows-[18rem] gap-5 md:grid-cols-6">

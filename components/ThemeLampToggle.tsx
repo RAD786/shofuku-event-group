@@ -39,6 +39,8 @@ export function ThemeLampToggle() {
           className="lamp-toggle-img lamp-toggle-img-lit object-contain"
           priority
         />
+        <span className="lamp-toggle-label lamp-toggle-label-day">off</span>
+        <span className="lamp-toggle-label lamp-toggle-label-night">on</span>
       </span>
     </button>
   );
