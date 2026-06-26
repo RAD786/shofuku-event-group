@@ -66,115 +66,92 @@ body {
 }
 
 @layer utilities {
-  .lamp-toggle {
+  .theme-switch {
     -webkit-tap-highlight-color: transparent;
   }
 
-  .lamp-toggle-glow {
-    opacity: 0;
-    filter: blur(12px);
-    transform: translate(-50%, 5px) scale(0.78);
-    transition:
-      opacity 500ms ease,
-      transform 500ms ease,
-      filter 500ms ease;
-  }
-
-  .lamp-toggle:hover .lamp-toggle-glow {
-    opacity: 0.22;
-    transform: translate(-50%, 6px) scale(0.9);
-  }
-
-  .dark .lamp-toggle-glow {
-    opacity: 1;
-    transform: translate(-50%, 7px) scale(1);
-  }
-
-  .dark .lamp-toggle:hover .lamp-toggle-glow {
-    opacity: 1;
-    filter: blur(14px);
-    transform: translate(-50%, 8px) scale(1.08);
-  }
-
-  .lamp-toggle-img {
-    transition:
-      opacity 360ms ease,
-      transform 420ms ease,
-      filter 500ms ease;
-  }
-
-  .lamp-toggle-img-unlit {
-    opacity: 1;
-    filter: drop-shadow(0 5px 10px rgba(22, 21, 20, 0.16));
-  }
-
-  .lamp-toggle-img-lit {
-    opacity: 0;
-    filter: drop-shadow(0 6px 12px rgba(22, 21, 20, 0.12));
-  }
-
-  .lamp-toggle-label {
+  .theme-switch-track {
     position: absolute;
-    left: 50%;
-    top: 46%;
-    z-index: 1;
-    transform: translate(-50%, -50%) rotate(-7deg);
-    color: rgba(248, 244, 235, 0.9);
-    font-family: "Brush Script MT", "Segoe Script", cursive;
-    font-size: 1.08rem;
-    font-weight: 400;
-    letter-spacing: 0;
-    line-height: 1;
-    opacity: 0;
-    pointer-events: none;
-    text-shadow: 0 1px 5px rgba(22, 21, 20, 0.38);
+    inset: 0;
+    overflow: hidden;
+    border: 1px solid rgba(22, 21, 20, 0.18);
+    border-radius: 999px;
+    background: linear-gradient(135deg, rgba(248, 244, 235, 0.94), rgba(220, 197, 143, 0.68));
+    box-shadow:
+      inset 0 1px 3px rgba(22, 21, 20, 0.16),
+      0 10px 24px rgba(22, 21, 20, 0.12);
     transition:
-      opacity 360ms ease,
-      transform 420ms ease,
-      color 420ms ease;
+      background 420ms ease,
+      border-color 420ms ease,
+      box-shadow 420ms ease;
   }
 
-  .lamp-toggle-label-day {
-    opacity: 1;
-    color: rgba(248, 244, 235, 0.94);
-    text-shadow: 0 1px 5px rgba(22, 21, 20, 0.5);
+  .dark .theme-switch-track {
+    border-color: rgba(248, 244, 235, 0.14);
+    background: linear-gradient(135deg, #070706, #153f35);
+    box-shadow:
+      inset 0 1px 5px rgba(0, 0, 0, 0.55),
+      0 0 22px rgba(220, 197, 143, 0.18);
   }
 
-  .lamp-toggle-label-night {
-    transform: translate(-50%, -50%) rotate(-8deg) scale(0.96);
+  .theme-switch-thumb {
+    position: absolute;
+    left: 0.25rem;
+    top: 50%;
+    z-index: 2;
+    height: 2rem;
+    width: 2rem;
+    border-radius: 999px;
+    background: #161514;
+    box-shadow:
+      0 5px 13px rgba(22, 21, 20, 0.24),
+      inset 0 1px 1px rgba(255, 255, 255, 0.18);
+    transform: translateY(-50%);
+    transition:
+      background 420ms ease,
+      box-shadow 420ms ease,
+      transform 420ms cubic-bezier(0.2, 0.8, 0.2, 1);
   }
 
-  .lamp-toggle:hover .lamp-toggle-img {
-    transform: translateY(-1px) scale(1.03);
+  .dark .theme-switch-thumb {
+    background: #f8f4eb;
+    box-shadow:
+      0 0 16px rgba(220, 197, 143, 0.5),
+      inset 0 1px 1px rgba(255, 255, 255, 0.55);
+    transform: translate(2.25rem, -50%);
   }
 
-  .dark .lamp-toggle-img-unlit {
-    opacity: 0;
+  .theme-switch-label {
+    position: absolute;
+    top: 50%;
+    z-index: 1;
+    transform: translateY(-50%);
+    font-size: 0.68rem;
+    font-weight: 900;
+    letter-spacing: 0.12em;
+    line-height: 1;
+    text-transform: uppercase;
+    transition:
+      color 360ms ease,
+      opacity 360ms ease;
   }
 
-  .dark .lamp-toggle-img-lit {
-    opacity: 1;
-    filter:
-      drop-shadow(0 0 14px rgba(245, 190, 90, 0.65))
-      drop-shadow(0 0 28px rgba(245, 190, 90, 0.34));
+  .theme-switch-label-off {
+    right: 0.55rem;
+    color: rgba(22, 21, 20, 0.58);
   }
 
-  .dark .lamp-toggle-label-day {
-    opacity: 0;
-    transform: translate(-50%, -50%) rotate(-6deg) scale(0.96);
+  .theme-switch-label-on {
+    left: 0.72rem;
+    color: rgba(248, 244, 235, 0.42);
   }
 
-  .dark .lamp-toggle-label-night {
-    opacity: 1;
-    transform: translate(-50%, -50%) rotate(-8deg) scale(1);
+  .dark .theme-switch-label-off {
+    color: rgba(248, 244, 235, 0.38);
   }
 
-  .lamp-toggle-cord {
-    transform-origin: top center;
-  }
-
-  .lamp-toggle:hover .lamp-toggle-cord {
-    transform: translateX(-50%) scaleY(1.16);
+  .dark .theme-switch-label-on {
+    color: rgba(220, 197, 143, 0.92);
   }
 
   .hero-bg {
