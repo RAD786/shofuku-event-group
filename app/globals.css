@@ -392,7 +392,6 @@ body {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .hero-bg,
   .hero-gradient,
   .hero-atmosphere,
   .hero-scan,
@@ -406,6 +405,28 @@ body {
     clip-path: none;
     opacity: 1;
     transform: none;
+  }
+
+  .hero-bg {
+    animation: none;
+  }
+
+  .hero-bg-lit {
+    opacity: 0;
+    transform: none;
+  }
+
+  .hero-bg-unlit {
+    opacity: 1;
+    transform: none;
+  }
+
+  .dark .hero-bg-lit {
+    opacity: 1;
+  }
+
+  .dark .hero-bg-unlit {
+    opacity: 0;
   }
 
   .hero-sunrise {
